@@ -5,67 +5,52 @@ class Employee
     public string Designation;
     public int EmpNo;
 
-
-
-
-    public Employee()
+    public void DisplayEmployee()
     {
-
-    }
-
-    public Employee(string name, string Designation, int EmpNo)
-    {
-        this.name = name;
-        this.Designation = Designation;
-        this.EmpNo = EmpNo;
-    }
-
-        //public Qualification(string UG, string PG, int Experience)
-         //{
-            //this.UG = UG;
-            //this.PG = PG;
-            //this.Experience = Experience;
-        //}
-
-
-
-public void GetEmployeeData()
-{
-    {
-        Console.WriteLine("Enter the name of employee: ");
-        name = Convert.ToString(Console.ReadLine());
-        Console.WriteLine("Enter the Designation of employee: ");
-        Designation = Convert.ToString(Console.ReadLine());
-        Console.WriteLine("Enter the EmpNo of employee: ");
-        EmpNo = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("The name of employee is: " + name);
+        Console.WriteLine("The salary of employee is: " + Designation);
+        Console.WriteLine("The date of  EmpNo of employee is: " + EmpNo);
     }
 }
-
-public void DisplayEmployee()
+class Qualification:Employee 
 {
-    Console.WriteLine("The name of employee is: " + name);
-    Console.WriteLine("The salary of employee is: " + Designation);
-    Console.WriteLine("The date of  EmpNo of employee is: " + EmpNo);
-}
+    public string UG;
+    public string PG;
+    public int Experience;
+    public void DisplayQualification()
+   {
+        Console.WriteLine("The name of employee is: " + UG);
+        Console.WriteLine("The salary of employee is: " + PG);
+        Console.WriteLine("The date of  EmpNo of employee is: " + Experience);
     }
-    class Program
+}
+class Salary : Qualification
 {
-    static void Main(string[] args)
+    float salary;
+    public void Displaysalary()
     {
-        Employee[] e = new Employee[10];
-        for (int i = 0; i < 10; i++)
-        {
-
-            e[i] = new Employee();
-            e[i].GetEmployeeData();
-        }
-
-
-
-        for (int i = 0; i < 10; i++)
-        {
-            e[i].DisplayEmployee();
-        }
+        Console.WriteLine("input your salary:"+salary);
     }
+    public static void Main (string [] args)
+    {
+        Salary myclass = new Salary();
+        myclass.name = "jason";
+        myclass.Designation = "Associate Developer";
+        myclass.UG = "B.tech";
+
+        Console.WriteLine("The name of employee is: " + Employee.name);
+        //Console.WriteLine("The Designation of employee is: " + Designation);
+        //Console.WriteLine("The date of  EmpNo of employee is: " + EmpNo);
+        //Console.WriteLine("The  UG degree  of employee is: " + UG);
+        //Console.WriteLine("The PG degree of employee is: " + PG);
+        //Console.WriteLine("The Experience) of employee is: " + Experience);
+        Console.ReadLine();
+     }
 }
+
+
+
+
+
+
 
